@@ -47,11 +47,20 @@ namespace TechJobsConsoleAutograded6
             // load data, if not already loaded
             LoadData();
 
-            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
-            //foreach()
+            List<Dictionary<string, string>> matchingJobs = new List<Dictionary<string, string>>();
+            foreach(Dictionary<string, string> job in AllJobs)
+            {
+                foreach(KeyValuePair<string, string> result in job)
+                {
+                    if(result.Value.Contains(value))
+                    {
+                        matchingJobs.Add(job);
+                        break;
+                    }
+                }
+            }
+                return matchingJobs;
 
-
-            return null;
         }
 
         /**
