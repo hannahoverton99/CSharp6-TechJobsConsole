@@ -141,15 +141,23 @@ namespace TechJobsConsoleAutograded6
                 Console.WriteLine("No results");
                 return;
             }
-            
+
             foreach(Dictionary<string, string> job in someJobs)
             {
                 Console.WriteLine(Environment.NewLine + "*****");
+                    // if(job.ContainsKey("position type"))
+                    // {
+                    //     Console.WriteLine($"position type: {job["position type"]}");
+                    // }
+
                 foreach(KeyValuePair<string, string> result in job)
                 {
+                    // if(result.Key != "position type")
+                    // {
                     Console.WriteLine($"{result.Key}: {result.Value}");
-                    
+                    // }
                 }
+                Console.WriteLine("*****");
             }
         }
     }
