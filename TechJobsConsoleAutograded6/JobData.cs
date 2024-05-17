@@ -27,6 +27,7 @@ namespace TechJobsConsoleAutograded6
             foreach (Dictionary<string, string> job in AllJobs)
             {
                 string aValue = job[column];
+                 
 
                 if (!values.Contains(aValue))
                 {
@@ -47,12 +48,16 @@ namespace TechJobsConsoleAutograded6
             // load data, if not already loaded
             LoadData();
 
+            string lowerValue = value.ToLower();
+
             List<Dictionary<string, string>> matchingJobs = new List<Dictionary<string, string>>();
             foreach(Dictionary<string, string> job in AllJobs)
             {
                 foreach(KeyValuePair<string, string> result in job)
                 {
-                    if(result.Value.Contains(value))
+                    string lowerResultValue = result.Value.ToLower();
+
+                    if(lowerResultValue.Contains(lowerValue))
                     {
                         matchingJobs.Add(job);
                         break;
@@ -77,13 +82,15 @@ namespace TechJobsConsoleAutograded6
 
             List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
+                string lowerValue = value.ToLower();
+
             foreach (Dictionary<string, string> row in AllJobs)
             {
                 string aValue = row[column];
 
-
+                string lowerAValue= aValue.ToLower();
                 //TODO: Make search case-insensitive
-                if (aValue.Contains(value))
+                if (lowerAValue.Contains(lowerValue))
                 {
                     jobs.Add(row);
                 }
