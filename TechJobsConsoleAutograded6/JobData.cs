@@ -47,6 +47,10 @@ namespace TechJobsConsoleAutograded6
             // load data, if not already loaded
             LoadData();
 
+            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
+            //foreach()
+
+
             return null;
         }
 
