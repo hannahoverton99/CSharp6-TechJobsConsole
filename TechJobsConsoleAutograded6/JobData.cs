@@ -26,12 +26,12 @@ namespace TechJobsConsoleAutograded6
 
             foreach (Dictionary<string, string> job in AllJobs)
             {
-                string aValue = job[column];
+                string search = job[column];
                  
 
-                if (!values.Contains(aValue))
+                if (!values.Contains(search))
                 {
-                    values.Add(aValue);
+                    values.Add(search);
                 }
             }
 
@@ -42,7 +42,7 @@ namespace TechJobsConsoleAutograded6
          * Search all columns for the given term
          */
 
-        //TODO: Complete the FindByValue method
+        //*********************TODO: Complete the FindByValue method
         public static List<Dictionary<string, string>> FindByValue(string value)
         {
             // load data, if not already loaded
